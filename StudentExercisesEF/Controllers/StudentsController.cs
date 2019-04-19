@@ -68,15 +68,14 @@ namespace StudentExercisesEF.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(StudentCohortViewModel viewModel)
         {
+            var student = viewModel.Student;
+
             if (ModelState.IsValid)
             {
-                _context.Add(viewModel.Student);
+                _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
-            var student = viewModel.Student;
-
             viewModel = new StudentCohortViewModel()
             {
                 Student = student,

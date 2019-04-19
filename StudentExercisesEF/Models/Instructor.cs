@@ -10,9 +10,11 @@ namespace StudentExercisesEF.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Display(Name = "Instructor Name")]
@@ -25,7 +27,7 @@ namespace StudentExercisesEF.Models
         }
 
         [Required]
-        [StringLength(20, MinimumLength = 3)]
+        [StringLength(15, MinimumLength = 3)]
         public string Slack { get; set; }
         
         [Required]

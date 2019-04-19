@@ -27,7 +27,7 @@ namespace StudentExercisesEF.Models
         }
 
         [Required]
-        [StringLength(12, MinimumLength = 3)]
+        [StringLength(15, MinimumLength = 3)]
         public string Slack { get; set; }
 
         [Required]
