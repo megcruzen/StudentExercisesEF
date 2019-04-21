@@ -1,0 +1,34 @@
+﻿@model StudentExercisesEF.Models.Cohort
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<h4>@Html.DisplayFor(model => model.CohortName)</h4>
+
+<h5>Instructors</h5>
+@foreach (var item in Model.InstructorList)
+{
+    <ul>
+        <li>
+            @Html.DisplayFor(modelItem => item.FullName) (@Html.DisplayFor(modelItem => item.Slack))
+        </li>
+    </ul>
+}
+
+<h5>Students</h5>
+@foreach (var item in Model.StudentList)
+{
+    <ul>
+        <li>
+            @Html.DisplayFor(modelItem => item.FullName) (@Html.DisplayFor(modelItem => item.Slack))
+        </li>
+    </ul>
+}
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
